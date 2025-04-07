@@ -1,0 +1,54 @@
+using System;
+
+public class CalculosDouble
+{
+    public static void Main(string[] args)
+    {
+        double valor1, valor2;
+
+        Console.Write("Digite o primeiro número (Adicionar número após a vírgula): ");
+        string entrada1 = Console.ReadLine();
+
+        if (!double.TryParse(entrada1, out valor1))
+        {
+            Console.WriteLine("Entrada inválida. Por favor, insira um número válido.");
+            return;
+        }
+
+        Console.Write("Digite o segundo número (Adicionar número após a vírgula): ");
+        string entrada2 = Console.ReadLine();
+
+        if (!double.TryParse(entrada2, out valor2))
+        {
+            Console.WriteLine("Entrada inválida. Por favor, insira um número válido.");
+            return;
+        }
+
+        double soma = valor1 + valor2;
+        Console.WriteLine($"A soma entre {valor1} e {valor2} é: {soma}");
+
+        double subtracao = valor1 - valor2;
+        Console.WriteLine($"A subtração entre {valor1} e {valor2} é: {subtracao}");
+
+        double multiplicacao = valor1 * valor2;
+        Console.WriteLine($"A multiplicação entre {valor1} e {valor2} é: {multiplicacao}");
+
+        if (valor2 != 0)
+
+        {
+            double divisao = valor1 / valor2;
+            Console.WriteLine($"A divisão entre {valor1} e {valor2} é: {divisao}");
+        }
+        else
+        {
+            Console.WriteLine("Erro! Não é possível dividir por zero.");
+        }
+
+        double media = (valor1 + valor2) / 2;
+        Console.WriteLine($"A média entre {valor1} e {valor2} é: {media}");
+
+        Console.ReadKey();
+
+
+    }
+}
