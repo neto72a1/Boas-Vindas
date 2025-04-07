@@ -1,0 +1,26 @@
+using System;
+
+public class Caracteres
+{
+    public static void Main(string[] args)
+    {
+        Console.Write("Digite uma ou mais palavras (separadas por espaço): ");
+        string entrada = Console.ReadLine();
+
+        string[] palavras = entrada.Split(' ');
+
+        foreach (string palavra in palavras)
+        {
+            string palavraTrimmed = palavra.Trim();
+
+            if (!string.IsNullOrEmpty(palavraTrimmed))
+            {
+                int quantidadeCaracteres = palavraTrimmed.Length;
+
+                Console.WriteLine($"A palavra \"{palavraTrimmed}\" tem {quantidadeCaracteres} caracteres.");
+            }
+        }
+
+        Console.ReadKey();
+    }
+}
