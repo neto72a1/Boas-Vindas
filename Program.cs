@@ -1,17 +1,19 @@
 ﻿using System;
 
-public class BoasVindas
+public class NomeCompleto
 {
-
     public static void Main(string[] args)
     {
-        Console.Write("Digite seu nome: ");
+        Console.Write("Digite seu primeiro nome: ");
         string nome = Console.ReadLine();
 
-        string mensagem = $"Olá, {nome}! Seja bem-vindo(a)!";
+        Console.Write("Digite seu sobrenome: ");
+        string sobrenome = Console.ReadLine();
 
-        Console.WriteLine(mensagem);
+        string nomeCompleto = nome + " " + sobrenome;
+
+        Console.WriteLine($"Nome completo: {nomeCompleto}");
 
         Console.ReadKey();
-    }
+    }    
 }
