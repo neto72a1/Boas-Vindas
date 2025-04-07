@@ -1,0 +1,45 @@
+using System;
+using System.Text.RegularExpressions;
+
+public class ValidadorPlaca
+{
+    public static void Main(string[] args)
+    {
+        Console.Write("Digite a placa do veículo (formato: ABC1234): ");
+        string placa = Console.ReadLine();
+
+        bool placaValida = VerificarPlacaAntiga(placa);
+
+        Console.WriteLine(placaValida ? "Verdadeiro" : "Falso");
+
+        Console.ReadKey();
+    }
+
+    static bool VerificarPlacaAntiga(string placa)
+    {
+        if (placa.Length != 7)
+        {
+            return false;
+        }
+
+        placa = placa.ToUpper();
+
+        for (int i = 0; i < 3; i++)
+        {
+            if (!char.IsLetter(placa[i]))
+            {
+                return false;
+            }
+        }
+
+        for (int i = 3; i < 7; i++)
+        {
+            if (!char.IsDigit(placa[i]))
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
